@@ -1,11 +1,9 @@
-
-
-console.log("aaa");
+import './mic.js'
 
 $(function () {
 
   var two = new Two({
-    fullscreen: true,
+    fullscreen: false,
     autostart: true
   }).appendTo(document.body);
 
