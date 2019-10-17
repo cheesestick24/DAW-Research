@@ -1,4 +1,5 @@
 import './mic.js'
+import './upload.js'
 
 $(function () {
 
