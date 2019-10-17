@@ -34,10 +34,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(jpg|png)$/,
-        loaders: 'url-loader'
       }
     ]
   }

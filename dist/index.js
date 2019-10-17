@@ -17,6 +17,7 @@ $(function () {
     .css('cursor', 'pointer')
     .click(function (e) {
       rect.fill = getRandomColor();
+      playTone();
     });
 
   two.bind('update', function (frameCount, timeDelta) {
@@ -31,4 +32,17 @@ $(function () {
       + Math.floor(Math.random() * 255) + ')';
   }
 
+  function playTone() {
+    console.log("in");
+
+    //鍵盤
+    const synth = new Tone.Synth().toMaster();
+    console.log("make");
+    //ピアノ音階作成
+
+    synth.triggerAttackRelease('C4', '8n');
+    console.log("play");
+
+  }
+  
 });
