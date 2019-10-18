@@ -5,22 +5,11 @@
   <title>Two.js: SVG Events</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="image_src" href="../images/logo.gif" />
-  <link rel="shortcut icon" type="image/gif" href="../images/favicon.gif">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="./rangeslider.js-2.3.0/rangeslider.min.js" defer></script>
+  <link rel="stylesheet" href="./rangeslider.js-2.3.0/rangeslider.css">
   <script src="./two.js"></script>
   <script src="./main.js" defer></script>
-  <!-- <script src="./Tone.js"></script> -->
-  <!-- <script src="rangeslider.js-2.3.0/rangeslider.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="rangeslider.js-2.3.0/rangeslider.css"> -->
-  <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
-  <!-- <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script> -->
-  <style>
-    #range {
-      width: 50px;
-      margin: 0 auto 30px;
-    }
-  </style>
 </head>
 
 <body>
@@ -29,8 +18,13 @@
     <output id="list"></output>
   </p>
   <p>
-    <div class="range"></div>
-    <!-- <input type="range" min="0" max="1" step="0.001" value="0"> -->
+    <input type="range" min="-20" max="0" data-rangeslider=""
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+    <div class="rangeslider rangeslider--horizontal rangeslider--active" id="js-rangeslider-1">
+      <div class="rangeslider__fill" style="width: 182px;"></div>
+      <div class="rangeslider__handle" style="left: 162px;"></div>
+    </div>
+    <output id="js-output"></output>
   </p>
 
 
