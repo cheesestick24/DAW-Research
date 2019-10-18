@@ -76,6 +76,20 @@ $(function () {
       }
     });
 
+  let range = document.getElementById('range');
+
+  noUiSlider.create(range, {
+    start: [0],
+    step: [0.001],
+    connect: true,
+    orientation: 'horizontal',
+    behaviour: 'tap-drag',
+    range: {
+      'min': 0,
+      'max': 1,
+    },
+  });
+
 
   window.setVol = val => {
     for (let p of recordArray) {

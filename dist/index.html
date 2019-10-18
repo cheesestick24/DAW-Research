@@ -8,14 +8,32 @@
   <link rel="image_src" href="../images/logo.gif" />
   <link rel="shortcut icon" type="image/gif" href="../images/favicon.gif">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./index.js" type="module"></script>
   <script src="./two.js"></script>
-  <script src="./Tone.js"></script>
+  <script src="./main.js" defer></script>
+  <!-- <script src="./Tone.js"></script> -->
+  <!-- <script src="rangeslider.js-2.3.0/rangeslider.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="rangeslider.js-2.3.0/rangeslider.css"> -->
+  <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
+  <!-- <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script> -->
+  <style>
+    #range {
+      width: 50px;
+      margin: 0 auto 30px;
+    }
+  </style>
 </head>
 
 <body>
+  <p>
     <input type="file" id="files" name="files[]" accept="audio/*" multiple />
     <output id="list"></output>
+  </p>
+  <p>
+    <div class="range"></div>
+    <!-- <input type="range" min="0" max="1" step="0.001" value="0"> -->
+  </p>
+
+
 </body>
 
 </html>
