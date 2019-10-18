@@ -6,6 +6,7 @@
 
 ```bash
 npm start
+npx webpack
 ```
 
 
@@ -13,4 +14,6 @@ npm start
 - Two.js
 
 を使用
+
+
 
