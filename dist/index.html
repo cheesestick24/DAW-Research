@@ -5,9 +5,9 @@
   <title>Two.js: SVG Events</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <script src="jquery-3.4.1.min.js"></script>
-  <script src="./rangeslider.js-2.3.0/rangeslider.min.js" defer></script>
   <link rel="stylesheet" href="./rangeslider.js-2.3.0/rangeslider.css">
+  <script src="jquery-3.4.1.min.js" defer></script>
+  <script src="./rangeslider.js-2.3.0/rangeslider.min.js" defer></script>
   <script src="./two.js"></script>
   <script src="./main.js" defer></script>
 </head>
@@ -18,13 +18,17 @@
     <output id="list"></output>
   </p>
   <p>
-    <input type="range" min="-20" max="0" data-rangeslider=""
+    <!-- <input type="range" min="10" max="1000" step="10" value="300" data-rangeslider> <output
+      id="js-output"></output> -->
+    <input type="range" min="10" max="1000" step="10" value="300" data-rangeslider=""
       style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
-    <div class="rangeslider rangeslider--horizontal rangeslider--active" id="js-rangeslider-1">
-      <div class="rangeslider__fill" style="width: 182px;"></div>
-      <div class="rangeslider__handle" style="left: 162px;"></div>
+    <div class="rangeslider rangeslider--horizontal" id="js-rangeslider-0">
+      <div class="rangeslider__fill" style="width: 266.919px;"></div>
+      <div class="rangeslider__handle" style="left: 245.919px;"></div>
     </div>
-    <output id="js-output"></output>
+    <output id="js-output">480</output>
+
+
   </p>
 
 
