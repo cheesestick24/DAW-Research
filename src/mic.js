@@ -48,6 +48,8 @@ $(function() {
 
   const recordArray = recorder.recordArray;
 
+  let vol = new Tone.Volume(0.5).toMaster();
+
   const delay = new Tone.PingPongDelay({
     wet: 0
   }).toMaster();
@@ -75,8 +77,23 @@ $(function() {
         }
       }
     });
+    
+    $('input[type="range_1"]').rangeslider({
+      polyfill: false,
+      onInit: function() {
+        this.output = $('<div class="range-output" />')
+        .insertAfter(this.$range)
+        .html(this.$element.val());
+      },
+      onSlide: function(position, value) {
+        this.output.html(value);
+         vol = value;
+        console.log(vol);
+      }
+    });
+    
 
-  // window.setVol = val => {
+  // setVol = val => {
   //   for (let p of recordArray) {
   //     p.volume.value = val;
   //   }
