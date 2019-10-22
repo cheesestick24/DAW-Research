@@ -1,3 +1,4 @@
+import Tone from 'tone'
 const player = []; // プレーヤー格納
 
 window.onload = function () {

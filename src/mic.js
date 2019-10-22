@@ -1,4 +1,4 @@
-import Tone from 'tone'
+import Tone from "tone";
 import * as recorder from "./recorder.js";
 
 const state = {
@@ -77,26 +77,27 @@ $(function() {
         }
       }
     });
-    
-    $('input[type="range_1"]').rangeslider({
-      polyfill: false,
-      onInit: function() {
-        this.output = $('<div class="range-output" />')
+
+  $('input[type="range_1"]').rangeslider({
+    polyfill: false,
+    onInit: function() {
+      this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
         .html(this.$element.val());
-      },
-      onSlide: function(position, value) {
-        this.output.html(value);
-         vol = value;
-        console.log(vol);
+    },
+    onSlide: function(position, value) {
+      this.output.html(value);
+      vol = value;
+      console.log(vol);
+    }
+  });
+  
+  function setVol (val){
+      for (let p of recordArray) {
+        p.volume.value = val;
       }
-    });
-    
-
+  }
   // setVol = val => {
-  //   for (let p of recordArray) {
-  //     p.volume.value = val;
-  //   }
   // }
 
   // window.delaytrig = delayval => {
