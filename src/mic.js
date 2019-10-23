@@ -17,7 +17,7 @@ $(function() {
 
   let recbutton = two.makeRectangle(
     two.width / 2,
-    (two.height * 7) / 8,
+    (two.height * 6) / 8,
     100,
     50
   );
@@ -25,7 +25,7 @@ $(function() {
 
   let micstart = two.makeRectangle(
     two.width / 2,
-    (two.height * 6) / 8,
+    (two.height * 7) / 8,
     100,
     50
   );
@@ -47,7 +47,6 @@ $(function() {
         state.recording = false;
       }
     });
-
   const channel = new Tone.Channel({
     volume: 0
   }).toMaster();
@@ -59,7 +58,7 @@ $(function() {
   const reverb = new Tone.JCReverb({
     wet: 0
   }).toMaster();
-
+  
   let playing = false;
   $(micstart._renderer.elem)
     .css("cursor", "pointer")
@@ -78,6 +77,45 @@ $(function() {
           }
         }
       }
+    });
+
+    $(recbutton._renderer.elem)
+    .css("cursor", "pointer")
+    .click(function(e) {
+      //recbutton.fill = getRandomColor();
+
+      $("div").html(function(index, element) {
+        if (index === 12) {
+          console.log(index);
+
+          if (state.recording === false) {
+            return "橙：録音停止";
+            state.recording = true;
+          } else {
+            return "橙：録音中";
+            state.recording = false;
+          }
+        }
+      });
+    });
+
+  $(micstart._renderer.elem)
+    .css("cursor", "pointer")
+    .click(function(e) {
+      $("div").html(function(index, element) {
+        if (index === 13) {
+          console.log(index);
+          if (state.recording === false) {
+            if (state.playing === false) {
+              return "赤：再生停止";
+              state.playing = true;
+            } else {
+              return "赤：再生中";
+              state.playing = false;
+            }
+          }
+        }
+      });
     });
 
   $('input[type="range_1"]').rangeslider({
@@ -113,12 +151,12 @@ $(function() {
       this.output.html(value);
 
       setDelay(value);
-      
+
       function setDelay(val) {
         for (let i = 0; i < recordArray.length; i++) {
           delay.wet.value = val;
           recordArray[i].connect(delay);
-          console.log("delay" + delay.wet.value);
+          console.log("delay:" + delay.wet.value);
         }
       }
     }
@@ -133,19 +171,18 @@ $(function() {
     },
     onSlide: function(position, value) {
       this.output.html(value);
-      
+
       setReverb(value);
-      
+
       function setReverb(val) {
         for (let i = 0; i < recordArray.length; i++) {
           reverb.wet.value = val;
           recordArray[i].connect(reverb);
-          console.log("reveb" + reverb.wet.value);
+          console.log("reverb:" + reverb.wet.value);
         }
       }
     }
   });
-
 
 });
 
