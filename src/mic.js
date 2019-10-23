@@ -48,7 +48,6 @@ $(function() {
       }
     });
 
-  const vol = new Tone.Volume();
   const channel = new Tone.Channel({
     volume: 0
   }).toMaster();
@@ -112,9 +111,9 @@ $(function() {
     },
     onSlide: function(position, value) {
       this.output.html(value);
+
       setDelay(value);
       
-
       function setDelay(val) {
         for (let i = 0; i < recordArray.length; i++) {
           delay.wet.value = val;
@@ -125,12 +124,29 @@ $(function() {
     }
   });
 
-  // window.reverbtrig = reverbval => {
-  //   for (let p of recordArray) {
-  //     reverb.wet.value = reverbval;
-  //     p.connect(reverb)
-  //   }
-  // }
+  $('input[type="range_3"]').rangeslider({
+    polyfill: false,
+    onInit: function() {
+      this.output = $('<div class="range-output" />')
+        .insertAfter(this.$range)
+        .html(this.$element.val());
+    },
+    onSlide: function(position, value) {
+      this.output.html(value);
+      
+      setReverb(value);
+      
+      function setReverb(val) {
+        for (let i = 0; i < recordArray.length; i++) {
+          reverb.wet.value = val;
+          recordArray[i].connect(reverb);
+          console.log("reveb" + reverb.wet.value);
+        }
+      }
+    }
+  });
+
+
 });
 
 const init = () => {
