@@ -46,6 +46,8 @@ export function recstart() {
 
   mediaRecorder.addEventListener('stop', () => {
     const recData = URL.createObjectURL(new Blob(chunks));
+    //tumami izirumade otonaranai
+    // recordArray.push(new Tone.Player(recData));
     recordArray.push(new Tone.Player(recData).toMaster());
 
     // console.log(URL.createObjectURL(new Blob(chunks)));

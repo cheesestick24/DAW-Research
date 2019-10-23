@@ -6,8 +6,10 @@ const state = {
   playing: false
 };
 
+const recordArray = recorder.recordArray;
+
 // import effect from './effect';
-$(function() {
+$(function () {
   var two = new Two({
     fullscreen: false,
     autostart: true
@@ -33,7 +35,7 @@ $(function() {
 
   $(recbutton._renderer.elem)
     .css("cursor", "pointer")
-    .click(function(e) {
+    .click(function (e) {
       //recbutton.fill = getRandomColor();
       if (state.recording === false) {
         console.log("start, recording: " + state.recording);
@@ -46,9 +48,12 @@ $(function() {
       }
     });
 
-  const recordArray = recorder.recordArray;
+  const vol = new Tone.Volume();
+  const channel = new Tone.Channel({
 
-  let vol = new Tone.Volume(0.5).toMaster();
+    volume: 0
+
+  }).toMaster();
 
   const delay = new Tone.PingPongDelay({
     wet: 0
@@ -61,7 +66,7 @@ $(function() {
   let playing = false;
   $(micstart._renderer.elem)
     .css("cursor", "pointer")
-    .click(function(e) {
+    .click(function (e) {
       if (state.recording === false) {
         console.log("play + recording: " + state.recording);
         if (state.playing === false) {
@@ -78,25 +83,30 @@ $(function() {
       }
     });
 
+
   $('input[type="range_1"]').rangeslider({
     polyfill: false,
-    onInit: function() {
+    onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
         .html(this.$element.val());
     },
-    onSlide: function(position, value) {
+    onSlide: function (position, value) {
       this.output.html(value);
-      vol = value;
-      console.log(vol);
+      setVol(value);
+      // console.log(value);
+
+      function setVol(val) {
+        for (let i = 0; i < recordArray.length; i++) {
+          // p.volume.value = val;
+          recordArray[i].volume.value = val;
+          console.log(recordArray[i].volume.value + ":"+i);
+        }
+      }
+      // channel.chain(vol, Tone.toMaster)
     }
   });
-  
-  function setVol (val){
-      for (let p of recordArray) {
-        p.volume.value = val;
-      }
-  }
+
   // setVol = val => {
   // }
 
@@ -114,3 +124,9 @@ $(function() {
   //   }
   // }
 });
+
+const init = () => {
+  console.log('初期化')
+}
+
+window.onload = init();
