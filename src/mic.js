@@ -47,6 +47,7 @@ $(function() {
         state.recording = false;
       }
     });
+
   const channel = new Tone.Channel({
     volume: 0
   }).toMaster();
@@ -59,6 +60,10 @@ $(function() {
     wet: 0
   }).toMaster();
   
+  const analy = new Tone.Analyzer({
+    size: 1024,
+  }).toMaster();
+
   let playing = false;
   $(micstart._renderer.elem)
     .css("cursor", "pointer")
