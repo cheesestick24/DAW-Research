@@ -9,7 +9,7 @@ const state = {
 const recordArray = recorder.recordArray;
 
 // import effect from './effect';
-$(function() {
+$(function () {
   var two = new Two({
     fullscreen: false,
     autostart: true
@@ -35,14 +35,14 @@ $(function() {
 
   $(recbutton._renderer.elem)
     .css("cursor", "pointer")
-    .click(function(e) {
+    .click(function (e) {
       //recbutton.fill = getRandomColor();
       if (state.recording === false) {
-        console.log("start, recording: " + state.recording);
+        $("#record").text("録音中")
         recorder.recstart();
         state.recording = true;
       } else {
-        console.log("stop, recording: " + state.recording);
+        $("#record").text("録音停止")
         recorder.recstop();
         state.recording = false;
       }
@@ -59,7 +59,7 @@ $(function() {
   const reverb = new Tone.JCReverb({
     wet: 0
   }).toMaster();
-  
+
   // const analy = new Tone.Analyzer({
   //   size: 1024,
   // }).toMaster();
@@ -67,15 +67,16 @@ $(function() {
   let playing = false;
   $(micstart._renderer.elem)
     .css("cursor", "pointer")
-    .click(function(e) {
+    .click(function (e) {
       if (state.recording === false) {
-        console.log("play + recording: " + state.recording);
         if (state.playing === false) {
+          $("#play").text("再生中")
           state.playing = true;
           for (let p of recordArray) {
             p.start();
           }
         } else {
+          $("#play").text("再生停止")
           state.playing = false;
           for (let p of recordArray) {
             p.stop();
@@ -84,53 +85,15 @@ $(function() {
       }
     });
 
-    $(recbutton._renderer.elem)
-    .css("cursor", "pointer")
-    .click(function(e) {
-      //recbutton.fill = getRandomColor();
-
-      $("div").html(function(index, element) {
-        if (index === 12) {
-          console.log(index);
-
-          if (state.recording === false) {
-            return "橙：録音停止";
-            state.recording = true;
-          } else {
-            return "橙：録音中";
-            state.recording = false;
-          }
-        }
-      });
-    });
-
-  $(micstart._renderer.elem)
-    .css("cursor", "pointer")
-    .click(function(e) {
-      $("div").html(function(index, element) {
-        if (index === 13) {
-          console.log(index);
-          if (state.recording === false) {
-            if (state.playing === false) {
-              return "赤：再生停止";
-              state.playing = true;
-            } else {
-              return "赤：再生中";
-              state.playing = false;
-            }
-          }
-        }
-      });
-    });
 
   $('input[type="range_1"]').rangeslider({
     polyfill: false,
-    onInit: function() {
+    onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
         .html(this.$element.val());
     },
-    onSlide: function(position, value) {
+    onSlide: function (position, value) {
       this.output.html(value);
       setVol(value);
       // console.log(value);
@@ -147,12 +110,12 @@ $(function() {
 
   $('input[type="range_2"]').rangeslider({
     polyfill: false,
-    onInit: function() {
+    onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
         .html(this.$element.val());
     },
-    onSlide: function(position, value) {
+    onSlide: function (position, value) {
       this.output.html(value);
 
       setDelay(value);
@@ -169,12 +132,12 @@ $(function() {
 
   $('input[type="range_3"]').rangeslider({
     polyfill: false,
-    onInit: function() {
+    onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
         .html(this.$element.val());
     },
-    onSlide: function(position, value) {
+    onSlide: function (position, value) {
       this.output.html(value);
 
       setReverb(value);
