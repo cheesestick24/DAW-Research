@@ -28,10 +28,7 @@ const stop = document.querySelector('#stop');
 let mediaRecorder = null;
 let mediaStream = null;
 
-
 export function recstart() {
-
-
 
   const chunks = [];
   mediaRecorder = new MediaRecorder(mediaStream, {
@@ -61,7 +58,6 @@ export function recstop() {
   if (mediaRecorder === null) {
     return;
   }
-
 
   mediaRecorder.stop();
   mediaRecorder = null;
