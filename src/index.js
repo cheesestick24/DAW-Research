@@ -1,8 +1,7 @@
 import Tone from 'tone'
-import noUiSlider from 'nouislider'
 import './mic'
 import './upload'
-import './rangeslider'
+import './timer'
 
 $(function () {
 
