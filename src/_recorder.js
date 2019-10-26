@@ -1,5 +1,5 @@
 import Tone from 'tone'
-import analyzer from './analyzer'
+
 export const recordArray = [] // プレーヤー格納
 
 window.onload = function () {
@@ -12,11 +12,11 @@ window.onload = function () {
     video: false
   }, successFunc, errorFunc);
 
-  function successFunc (error) {
+  function successFunc(error) {
     console.log('マイク使えます')
   }
   // Web Audio APIが使えなかった時
-  function errorFunc (error) {
+  function errorFunc(error) {
     alert('error');
   }
 }
@@ -28,10 +28,7 @@ const stop = document.querySelector('#stop');
 let mediaRecorder = null;
 let mediaStream = null;
 
-
-export function recstart () {
-
-
+export function recstart() {
 
   const chunks = [];
   mediaRecorder = new MediaRecorder(mediaStream, {
@@ -55,16 +52,66 @@ export function recstart () {
   });
 
   mediaRecorder.start();
-
-  analyzer.drawAnalyzer(mediaStream);
-
 };
 
-export function recstop () {
+
+
+const canvas = document.getElementById('analyzer')
+const canvasCtx = canvas.getContext('2d')
+
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const analyser = audioCtx.createAnalyser();
+
+let source = audioCtx.createMediaStreamSource(mediaStream);
+source.connect(analyser);
+// analyser.connect(audioCtx.destination);
+// distortion.connect(audioCtx.destination);
+
+analyser.fftSize = 2048;
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+const WIDTH = 1000;
+const HEIGHT = 250;
+analyser.getByteTimeDomainData(dataArray);
+canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+
+function draw() {
+  var drawVisual = requestAnimationFrame(draw);
+  analyser.getByteTimeDomainData(dataArray);
+  canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+  canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+  canvasCtx.lineWidth = 2;
+  canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+  canvasCtx.beginPath();
+  var sliceWidth = WIDTH * 1.0 / bufferLength;
+  var x = 0;
+  for (var i = 0; i < bufferLength; i++) {
+
+    var v = dataArray[i] / 128.0;
+    var y = v * HEIGHT / 2;
+
+    if (i === 0) {
+      canvasCtx.moveTo(x, y);
+    } else {
+      canvasCtx.lineTo(x, y);
+    }
+
+    x += sliceWidth;
+  }
+  canvasCtx.lineTo(canvas.width, canvas.height / 2);
+  canvasCtx.stroke();
+}
+
+draw();
+
+
+
+
+
+export function recstop() {
   if (mediaRecorder === null) {
     return;
   }
-
 
   mediaRecorder.stop();
   mediaRecorder = null;

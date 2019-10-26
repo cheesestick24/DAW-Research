@@ -62,9 +62,7 @@ $(function () {
     wet: 0
   }).toMaster();
 
-  // const analy = new Tone.Analyzer({
-  //   size: 1024,
-  // }).toMaster();
+
 
   let playing = false;
   $(micstart._renderer.elem)
