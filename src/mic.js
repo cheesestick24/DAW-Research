@@ -1,6 +1,6 @@
 import Tone from "tone";
 import * as recorder from "./recorder.js";
-
+import timer from './timer'
 const state = {
   recording: false,
   playing: false
@@ -41,10 +41,12 @@ $(function () {
         $("#record").text("録音中")
         recorder.recstart();
         state.recording = true;
+        timer.timerStart();
       } else {
         $("#record").text("録音停止")
         recorder.recstop();
         state.recording = false;
+        timer.timerStop();
       }
     });
 
