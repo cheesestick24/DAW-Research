@@ -5,7 +5,7 @@ import './timer'
 
 $(function () {
 
-  
+
   var two = new Two({
     fullscreen: false,
     autostart: true
@@ -32,30 +32,49 @@ $(function () {
     rect[i] = two.makeRectangle(two.width / 5, two.height / 2, 50, 250);
     two.width = two.width + 300;
     rect[i].noStroke().fill = getRandomColor();
-    // two.height = two.height + 10;
   }
+
 
   // Update the renderer in order to generate corresponding DOM Elements.
   two.update();
-
+  
   for (let i = 0; i < scale.length; i++) {
     $(rect[i]._renderer.elem)
-      .css('cursor', 'pointer')
-      .click(function (e) {
-        //rect.fill = getRandomColor();
-        playTone(i);
-      });
+    .css('cursor', 'pointer')
+    .click(function (e) {
+      //rect.fill = getRandomColor();
+      playTone(i);
+      colorselect(i);
+      
+    });
+  }
+  
+  let button = false;
+
+  function colorselect(i) {
+    if (button == true) {
+      console.log("true")
+      rect[i].noStroke().fill = pushbutton();
+      button = false;
+    } else {
+      console.log("false")
+      rect[i].noStroke().fill = getRandomColor();
+      button = true;
+    }
   }
 
-  // two.bind('update', function (frameCount, timeDelta) {
-  //   rect.rotation = frameCount / 60;
-  // });
 
   function getRandomColor() {
     return 'rgb('
       + Math.floor(Math.random() * 255) + ','
       + Math.floor(Math.random() * 255) + ','
       + Math.floor(Math.random() * 255) + ')';
+  }
+  function pushbutton() {
+    return 'rgb('
+      + 0 + ','
+      + 0 + ','
+      + 0 + ')';
   }
 
   function playTone(index) {
