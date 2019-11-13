@@ -19,17 +19,37 @@ const original_scale = [
 ];
 
 const scale = original_scale.reverse();
+let synthVol = 0;
 
-
-function playTone(index) {
+$('input[type="range_4"]').rangeslider({
+    polyfill: false,
+    onInit: function () {
+        this.output = $('<br><div class="range-output" />')
+            .insertAfter(this.$range)
+            .html("ボリューム:" + this.$element.val());
+        synthVol = this.$element.val();
+    },
+    onSlide: function (position, value) {
+        this.output.html("ボリューム:" + value);
+        synthVol = value;
+        // setVol(value);
+        // function setVol(val) {
+        //     synth.volume.value = val;
+        // }
+    }
+});
+function playTone(index, vol) {
     //鍵盤
-    const synth = new Tone.Synth().toMaster();
+    const synth = new Tone.Synth({
+        volume: vol
+    }).toMaster();
 
     //ピアノ音階作成
 
     synth.triggerAttackRelease(scale[index], '32n');
     // (time, 0, "32n", 0, vel);
 }
+
 
 const length = 16;
 
@@ -45,11 +65,11 @@ var loop = new Tone.Sequence(function (time, col) {
                 firstFlag = null;
                 return false;
             }
-            console.log(col)
+            // console.log(col);
 
             //slightly randomized velocities
             var vel = Math.random() * 0.5 + 0.5;
-            playTone(i);
+            playTone(i, synthVol);
         } else {
             // firstFlag = null;
         }
