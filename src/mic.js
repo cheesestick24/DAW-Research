@@ -10,43 +10,6 @@ const recordArray = recorder.recordArray;
 
 // import effect from './effect';
 $(function () {
-  // var two = new Two({
-  //   width: 100,
-  //   height: 100,
-  //   fullscreen: false,
-  //   autostart: true
-  // }).appendTo(document.body);
-
-  // let recbutton = two.makeRectangle(
-  //   0,
-  //   0,
-  //   100,
-  //   50
-  // );
-  // recbutton.fill = "#FF0000";
-
-  // two.update();
-
-  // if (state.recording === false) {
-  //   $("#record").text("録音中")
-  //   recorder.recstart();
-  //   state.recording = true;
-  //   timer.timerStart();
-  // } else {
-  //   $("#record").text("録音停止")
-  //   recorder.recstop();
-  //   state.recording = false;
-  //   timer.timerStop();
-  // }
-  // $(recbutton._renderer.elem)
-  //   .css("cursor", "pointer")
-  //   .click(function (e) {
-  //     //recbutton.fill = getRandomColor();
-  //   });
-
-  // const channel = new Tone.Channel({
-  //   volume: 0
-  // }).toMaster();
 
   const delay = new Tone.PingPongDelay({
     wet: 0
