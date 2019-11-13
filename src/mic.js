@@ -10,49 +10,43 @@ const recordArray = recorder.recordArray;
 
 // import effect from './effect';
 $(function () {
-  var two = new Two({
-    fullscreen: false,
-    autostart: true
-  }).appendTo(document.body);
+  // var two = new Two({
+  //   width: 100,
+  //   height: 100,
+  //   fullscreen: false,
+  //   autostart: true
+  // }).appendTo(document.body);
 
-  let recbutton = two.makeRectangle(
-    two.width / 2,
-    (two.height * 6) / 8,
-    100,
-    50
-  );
-  recbutton.fill = "#FF8000";
+  // let recbutton = two.makeRectangle(
+  //   0,
+  //   0,
+  //   100,
+  //   50
+  // );
+  // recbutton.fill = "#FF0000";
 
-  let micstart = two.makeRectangle(
-    two.width / 2,
-    (two.height * 7) / 8,
-    100,
-    50
-  );
-  micstart.fill = "#ff0000";
+  // two.update();
 
-  two.update();
+  // if (state.recording === false) {
+  //   $("#record").text("録音中")
+  //   recorder.recstart();
+  //   state.recording = true;
+  //   timer.timerStart();
+  // } else {
+  //   $("#record").text("録音停止")
+  //   recorder.recstop();
+  //   state.recording = false;
+  //   timer.timerStop();
+  // }
+  // $(recbutton._renderer.elem)
+  //   .css("cursor", "pointer")
+  //   .click(function (e) {
+  //     //recbutton.fill = getRandomColor();
+  //   });
 
-  $(recbutton._renderer.elem)
-    .css("cursor", "pointer")
-    .click(function (e) {
-      //recbutton.fill = getRandomColor();
-      if (state.recording === false) {
-        $("#record").text("録音中")
-        recorder.recstart();
-        state.recording = true;
-        timer.timerStart();
-      } else {
-        $("#record").text("録音停止")
-        recorder.recstop();
-        state.recording = false;
-        timer.timerStop();
-      }
-    });
-
-  const channel = new Tone.Channel({
-    volume: 0
-  }).toMaster();
+  // const channel = new Tone.Channel({
+  //   volume: 0
+  // }).toMaster();
 
   const delay = new Tone.PingPongDelay({
     wet: 0
@@ -62,40 +56,17 @@ $(function () {
     wet: 0
   }).toMaster();
 
-  let playing = false;
-  $(micstart._renderer.elem)
-    .css("cursor", "pointer")
-    .click(function (e) {
-      // if (state.recording === false) {
-      //   if (state.playing === false) {
-      //     $("#play").text("再生中")
-      //     state.playing = true;
-      //     for (let p of recordArray) {
-      //       p.start();
-      //     }
-      //   } else {
-      //     $("#play").text("再生停止")
-      //     state.playing = false;
-      //     for (let p of recordArray) {
-      //       p.stop();
-      //     }
-      //   }
-      // }
-    });
-
-
   $('input[type="range_1"]').rangeslider({
     polyfill: false,
     onInit: function () {
-      this.output = $('<div class="range-output" />')
+      this.output = $('<br><div class="range-output" />')
         .insertAfter(this.$range)
-        .html(this.$element.val());
+        .html("ボリューム:" + this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html(value);
+      this.output.html("ボリューム:" + value);
       setVol(value);
       // console.log(value);
-
       function setVol(val) {
         for (let i = 0; i < recordArray.length; i++) {
           // p.volume.value = val;
@@ -109,12 +80,12 @@ $(function () {
   $('input[type="range_2"]').rangeslider({
     polyfill: false,
     onInit: function () {
-      this.output = $('<div class="range-output" />')
+      this.output = $('<br><div class="range-output" />')
         .insertAfter(this.$range)
-        .html(this.$element.val());
+        .html("リバーブ：" + this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html(value);
+      this.output.html("リバーブ：" + value);
 
       setDelay(value);
 
@@ -131,12 +102,12 @@ $(function () {
   $('input[type="range_3"]').rangeslider({
     polyfill: false,
     onInit: function () {
-      this.output = $('<div class="range-output" />')
+      this.output = $('<br><div class="range-output" />')
         .insertAfter(this.$range)
-        .html(this.$element.val());
+        .html("ディレイ：" + this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html(value);
+      this.output.html("ディレイ：" + value);
 
       setReverb(value);
 
@@ -155,6 +126,7 @@ $(function () {
 const micPlay = () => {
   if (state.recording === false) {
     if (state.playing === false) {
+      // console.log('playing')
       $("#play").text("再生中")
       state.playing = true;
       for (let p of recordArray) {
@@ -162,11 +134,26 @@ const micPlay = () => {
       }
     } else {
       $("#play").text("再生停止")
+      // console.log('stop')
       state.playing = false;
       for (let p of recordArray) {
         p.stop();
       }
     }
+  }
+}
+
+const recClick = () => {
+  if (state.recording === false) {
+    $("#record").text("録音中")
+    recorder.recstart();
+    state.recording = true;
+    timer.timerStart();
+  } else {
+    $("#record").text("録音停止")
+    recorder.recstop();
+    state.recording = false;
+    timer.timerStop();
   }
 }
 
@@ -176,4 +163,5 @@ const init = () => {
 };
 
 window.micPlay = micPlay;
+window.recClick = recClick;
 window.onload = init();
