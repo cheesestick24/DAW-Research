@@ -16,7 +16,7 @@ export default {
                 mil = milliSec - (60000 * min) - (sec * 1000)
                 console.log(mil,sec,min)
             }
-            console.log(min + "分" + sec + "秒" + mil);
+            // console.log(min + "分" + sec + "秒" + mil);
             $("#timer").text("録音時間" + min + "分" + sec + "秒" + mil);
         }, 1);
     },
