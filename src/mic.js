@@ -62,27 +62,25 @@ $(function () {
     wet: 0
   }).toMaster();
 
-
-
   let playing = false;
   $(micstart._renderer.elem)
     .css("cursor", "pointer")
     .click(function (e) {
-      if (state.recording === false) {
-        if (state.playing === false) {
-          $("#play").text("再生中")
-          state.playing = true;
-          for (let p of recordArray) {
-            p.start();
-          }
-        } else {
-          $("#play").text("再生停止")
-          state.playing = false;
-          for (let p of recordArray) {
-            p.stop();
-          }
-        }
-      }
+      // if (state.recording === false) {
+      //   if (state.playing === false) {
+      //     $("#play").text("再生中")
+      //     state.playing = true;
+      //     for (let p of recordArray) {
+      //       p.start();
+      //     }
+      //   } else {
+      //     $("#play").text("再生停止")
+      //     state.playing = false;
+      //     for (let p of recordArray) {
+      //       p.stop();
+      //     }
+      //   }
+      // }
     });
 
 
@@ -154,8 +152,28 @@ $(function () {
 
 });
 
+const micPlay = () => {
+  if (state.recording === false) {
+    if (state.playing === false) {
+      $("#play").text("再生中")
+      state.playing = true;
+      for (let p of recordArray) {
+        p.start();
+      }
+    } else {
+      $("#play").text("再生停止")
+      state.playing = false;
+      for (let p of recordArray) {
+        p.stop();
+      }
+    }
+  }
+}
+
 const init = () => {
   console.log("初期化");
+  // $('#playSeq').attr('onclick', 'micPlay()');
 };
 
+window.micPlay = micPlay;
 window.onload = init();

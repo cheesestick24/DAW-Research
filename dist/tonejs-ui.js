@@ -627,7 +627,8 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 					?disabled=${this.disabled}
 					?playing=${this.playing}
 					@click=${this._clicked.bind(this)}
-					aria-label="Play" .aria-checked=${this.playing}>
+					aria-label="Play" .aria-checked=${this.playing}
+					onclick="micPlay()">
 					${this.playing?A:M}
 				</button>
 			</div>

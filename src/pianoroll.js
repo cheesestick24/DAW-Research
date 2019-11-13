@@ -1,7 +1,7 @@
 import Tone from 'tone'
 
 let firstFlag
-const scale = [
+const original_scale = [
     'C4',
     'D4',
     'E4',
@@ -17,6 +17,10 @@ const scale = [
     'A5',
     'B5',
 ];
+
+const scale = original_scale.reverse();
+
+
 function playTone(index) {
     //鍵盤
     const synth = new Tone.Synth().toMaster();
