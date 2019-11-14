@@ -2,7 +2,8 @@ import Tone from 'tone'
 import './mic'
 import './upload'
 import './timer'
-import './pianoroll'
+// import './pianoroll'
+import "./drum"
 
 $(function () {
 
