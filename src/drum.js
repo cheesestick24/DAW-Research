@@ -45,7 +45,7 @@ $('input[type="range_4"]').rangeslider({
 
 
 function loadPlayers(index, vol, time) {
-    console.log(instrument[index]);
+    // console.log(instrument[index]);
     const drum = new Tone.Player(instrument[index]).toMaster({
         volume: vol
     });
