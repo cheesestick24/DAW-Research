@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Two.js: SVG Events</title>
+  <title>音楽制作アプリ</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="./rangeslider.js-2.3.0/rangeslider.css">
@@ -19,15 +19,38 @@
 </head>
 
 <body>
+  <br>
+  <div id="stepSeq">
+    <tone-step-sequencer rows="14" ></tone-step-sequencer>
+  </div>
+  <br>
+  <div id="rangeSlider">
+    <input type="range_1" min="-100" max="10" step="0.1" value="-100" data-rangeslider=""
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+    <br>
+    <input type="range_2" min="0" max="1" step="0.001" value="0" data-rangeslider=""
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+    <br>
+    <input type="range_3" min="0" max="1" step="0.001" value="0" data-rangeslider=""
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+    <br>
+    <input type="range_4" min="-100" max="20" step="0.1" value="-100" data-rangeslider=""
+      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+  </div>
+  <div>
+    <output id="list"></output>
+  </div>
   <canvas id="analyzer"></canvas>
-  <p>
-    <div id="record">橙：録音ボタン</div>
-  </p>
-  <span>
-    <div id="timer">録音時間：0分0秒000</div>
-  </span>
-  <button type="button" class="btn btn-danger rounded-circle p-0" style="width:4rem;height:4rem;font-size:36px;"
-  onclick="recClick()">●</button>
+  <div>
+    <div>
+      <div id="record">橙：録音ボタン</div>
+    </div>
+    <div>
+      <div id="timer">録音時間：0分0秒000</div>
+    </div>
+    <button type="button" class="btn btn-danger rounded-circle p-0" style="width:4rem;height:4rem;font-size:36px;"
+      onclick="recClick()">●</button>
+  </div>
 
   <div class="input-group">
     <div class="input-group-prepend">
@@ -39,33 +62,11 @@
       <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
     </div>
   </div>
-  <div>
-    <!-- <input type="file" id="files" name="files[]" accept="audio/*" multiple /> -->
-    <output id="list"></output>
-  </div>
   <hr>
   <p>
-    <input type="range_1" min="-100" max="10" step="0.1" value="0" data-rangeslider=""
-      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
-    <br>
-    <input type="range_2" min="0" max="1" step="0.001" value="0" data-rangeslider=""
-      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
-    <br>
-    <input type="range_3" min="0" max="1" step="0.001" value="0" data-rangeslider=""
-      style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
-  </p>
-  <p>
-    <!-- <tone-explanation label="Step Sequencer"> -->
-    <!-- <tone-explanation> 
-          </tone-explanation> -->
-
-    <!-- <tone-content> -->
-    <tone-step-sequencer rows="14" style="height: 300px; width: 100%;"></tone-step-sequencer>
     <tone-transport style="width: 100%;"></tone-transport>
-    <!-- </tone-content> -->
   </p>
-  <input type="range_4" min="-100" max="20" step="0.1" value="0" data-rangeslider=""
-    style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+
 
 
 </body>

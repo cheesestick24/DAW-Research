@@ -1393,9 +1393,12 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 		`}});customElements.define("tone-step-sequencer",class extends i.a{static get properties(){return{label:{type:String},rows:{type:Number},columns:{type:Number},highlight:{type:Number}}}constructor(){super(),this.rows=4,this.columns=16,this.highlight=-1,this.values=[],this.adding=!1}get currentColumn(){return this.values[Math.clamp(this.highlight,0,this.columns-1)]}_mousedown(t,e,n){t.cancelable&&t.preventDefault(),this.adding=!this.values[e][n],this.values[e][n]=this.adding,this.requestUpdate()}_mousemove(t,e,n){if(t.cancelable&&t.preventDefault(),t.buttons)this.values[e][n]=this.adding,this.requestUpdate();else if(t.changedTouches){const{clientWidth:i,clientHeight:o}=this.shadowRoot.querySelector("#container"),{top:r,left:s}=this.getBoundingClientRect();Array.from(t.changedTouches).forEach(t=>{const a=(t.clientX-s)/i,l=(t.clientY-r)/o;e=Math.floor(a*this.columns),n=Math.floor(l*this.rows),this.values[e][n]=this.adding}),this.requestUpdate()}}updated(t){if(t.has("columns")||t.has("rows")){this.values=[];for(let t=0;t<this.columns;t++){const t=[];for(let e=0;e<this.rows;e++)t[e]=!1;this.values.push(t)}this.requestUpdate()}}render(){return i.b`
 			<style>
 				:host {
-					display: inline-block;
-					width: 100%;
-					height: 120px;
+					width: 90%;
+					height: 600px;
+					text-align: center;
+					margin: 0 auto;
+					border:solid 1px #000;
+					display: block;
 				}
 				#container {
 					width: 100%;

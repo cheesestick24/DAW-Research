@@ -24,10 +24,10 @@ $(function () {
     onInit: function () {
       this.output = $('<br><div class="range-output" />')
         .insertAfter(this.$range)
-        .html("ボリューム:" + this.$element.val());
+        .html("ボリューム:" + (Number(this.$element.val()) + 100));
     },
     onSlide: function (position, value) {
-      this.output.html("ボリューム:" + value);
+      this.output.html("ボリューム:" + (value + 100).toFixed(1));
       setVol(value);
       // console.log(value);
       function setVol(val) {
