@@ -22,19 +22,19 @@ $(function () {
   $('input[type="range_1"]').rangeslider({
     polyfill: false,
     onInit: function () {
-      this.output = $('<br><div class="range-output" />')
+      this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
-        .html("ボリューム:" + (Number(this.$element.val()) + 100));
+        .html("ボリューム:" + '<br>'+ (Number(this.$element.val()) + 100.0));
     },
     onSlide: function (position, value) {
-      this.output.html("ボリューム:" + (value + 100).toFixed(1));
+      this.output.html("ボリューム:" + '<br>'+  (value + 100).toFixed(1));
       setVol(value);
       // console.log(value);
       function setVol(val) {
         for (let i = 0; i < recordArray.length; i++) {
           // p.volume.value = val;
           recordArray[i].volume.value = val;
-          console.log(i + ":" + recordArray[i].volume.value);
+          // console.log(i + ":" + recordArray[i].volume.value);
         }
       }
     }
@@ -43,12 +43,12 @@ $(function () {
   $('input[type="range_2"]').rangeslider({
     polyfill: false,
     onInit: function () {
-      this.output = $('<br><div class="range-output" />')
+      this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
-        .html("リバーブ：" + this.$element.val());
+        .html("リバーブ：" + '<br>'+ this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html("リバーブ：" + value);
+      this.output.html("リバーブ：" + '<br>'+ value);
 
       setDelay(value);
 
@@ -56,7 +56,7 @@ $(function () {
         for (let i = 0; i < recordArray.length; i++) {
           delay.wet.value = val;
           recordArray[i].connect(delay);
-          console.log("delay:" + delay.wet.value);
+          // console.log("delay:" + delay.wet.value);
         }
       }
     }
@@ -65,12 +65,12 @@ $(function () {
   $('input[type="range_3"]').rangeslider({
     polyfill: false,
     onInit: function () {
-      this.output = $('<br><div class="range-output" />')
+      this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
-        .html("ディレイ：" + this.$element.val());
+        .html("ディレイ：" + '<br>'+ this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html("ディレイ：" + value);
+      this.output.html("ディレイ：" + '<br>'+ value);
 
       setReverb(value);
 
@@ -78,7 +78,7 @@ $(function () {
         for (let i = 0; i < recordArray.length; i++) {
           reverb.wet.value = val;
           recordArray[i].connect(reverb);
-          console.log("reverb:" + reverb.wet.value);
+          // console.log("reverb:" + reverb.wet.value);
         }
       }
     }

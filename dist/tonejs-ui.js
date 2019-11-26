@@ -1394,9 +1394,10 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 			<style>
 				:host {
 					width: 90%;
-					height: 600px;
+					height: 40vh;
 					text-align: center;
-					margin: 0 auto;
+					margin-left: auto;
+					margin-right: auto;
 					border:solid 1px #000;
 					display: block;
 				}
