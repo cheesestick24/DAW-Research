@@ -4,7 +4,7 @@ const player = []; // プレーヤー格納
 function handleFileSelect(evt) {
   evt.stopPropagation();
   evt.preventDefault();
-  let files = evt.dataTransfer.files; // FileList object
+  let files = evt.target.files || evt.dataTransfer.files; // FileList object
 
   // Loop through the FileList and render image files as thumbnails.
   for (let i = 0, f; f = files[i]; i++) {
