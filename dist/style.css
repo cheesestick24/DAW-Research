@@ -6,7 +6,7 @@
 }
 #analyzer{
     height: 20vh;
-    width: 30vw;
+    width: 30%;
     border:solid 1px rgb(214, 3, 3);
     float: left;
 }
@@ -76,13 +76,15 @@
     border:solid 1px rgb(70, 5, 221);
 }
 #list{
-    width: 20%;
+    /* width: 20%;
+    height: 10vh; */
     border:solid 1px rgb(221, 5, 5);
 }
 #play{
     border:solid 1px #000;
     float: left;
     width: 70%;
+    height: 10%;
 }
 .custom-file{
     border:solid 1px rgb(221, 5, 5);
@@ -103,5 +105,28 @@
     float: left;
     font: 20pt bold 'Vollkorn';
     color: #bbb;
-    width: 500px;
+    width: 20%;
+    height: 20%;
   }
+
+  /* input[type=file]{
+    border:solid 1px rgb(221, 5, 5);
+    width: 500px;
+    height: 100px;
+  } */
+
+  label > input {
+    display:none; /* アップロードボタンのスタイルを無効にする */
+    }
+    label {
+    color: rgb(0, 0, 0); /* ラベルテキストの色を指定する */
+    font-size: 100%;
+    background-color: rgb(250, 126, 126);/* ラベルの背景色を指定する */
+    /* padding: 2%; ラベルとテキスト間の余白を指定する */
+    border: double 1vh #AAAAAA;
+    float: left;
+    width: 35%;
+    height: 10%;/* ラベルのボーダーを指定する */
+    }
+
+  

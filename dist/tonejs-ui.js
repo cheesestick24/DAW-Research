@@ -2280,9 +2280,11 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 				#container {
 					background-color: var(--color-light-gray);
 					padding: 5px;
+					height: 20%;
 				}
 				tone-play-toggle {
-					width: 50%;
+					width: 30%;
+					height: 20%;
 				}
 				#top {
 					position: relative;
