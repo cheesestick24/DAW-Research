@@ -8,12 +8,15 @@
   <link rel="stylesheet" href="./rangeslider.js-2.3.0/rangeslider.css">
   <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dropzone/dropzone.css">
   <!-- <link rel="stylesheet" href="style.css"> -->
   <script src="Tone.js"></script>
   <script src="jquery-3.4.1.min.js" defer></script>
   <script src="./rangeslider.js-2.3.0/rangeslider.min.js" defer></script>
   <script src="./tonejs-ui.js"></script>
+  <script src="./dropzone/dropzone.js "></script>
   <script src="./two.js"></script>
+  <script src="./bootstrap-4.0.0-dist/js/bootstrap.js"></script>
   <script src="./main.js" defer></script>
   <!-- <script src="./drum.js" defer></script> -->
 </head>
@@ -46,30 +49,26 @@
     <div id="button">
       録音ボタン
       <button type="button" class="btn btn-danger rounded-circle p-0" style="width:60%;height:100%;font-size:250%;"
-      onclick="recClick()">●</button>
+        onclick="recClick()">●</button>
     </div>
     <div id="record">録音停止</div>
     <div id="timer">録音時間：0分0秒000</div>
   </div>
 
 
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-    </div>
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" id="files" name="files[]"
+  <!-- <form action="/upload" class="dropzone"></form> -->
+  <div id="drop_zone">Drop files here</div>
+ 
+  <input type="file" class="file-upload" aria-describedby="inputGroupFileAddon01" id="files" name="files[]"
         accept="audio/*" multiple>
-      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-    </div>
-    <div>
-      <output id="list"></output>
-    </div>
+
+  <div>
+    <output id="list"></output>
   </div>
-  <hr>
-  <p>
-    <tone-transport style="width: 100%;"></tone-transport>
-  </p>
+  <!-- </div> -->
+  <div id="play">
+    <tone-transport></tone-transport>
+  </div>
 
 
 
