@@ -23,10 +23,8 @@
 
 .rangeslider--vertical {
   width: 2vw;
-  height: 46vh;
+  height: 40vh;
   margin: 0 45%;
-  /* min-height: -1vh; */
-  /* max-height: 24vh; */
 }
 
 .rangeslider--disabled {

@@ -1396,8 +1396,7 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 					width: 90%;
 					height: 40vh;
 					text-align: center;
-					margin-left: auto;
-					margin-right: auto;
+					
 					border:solid 1px #000;
 					display: block;
 				}
@@ -1405,6 +1404,12 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 					width: 100%;
 					height: 100%;
 					display: flex;
+					border: solid 1px rgb(31, 116, 76);
+					// margin-left: 10%;
+					// margin-right: 10%;
+					// margin: 0 auto;
+					text-align: center;
+					
 				}
 				.column {
 					flex: 1;
