@@ -5,20 +5,20 @@ import './timer'
 // import './pianoroll'
 import "./drum"
 
-$(function () {
+// $(function () {
 
 
-  var two = new Two({
-    fullscreen: false,
-    autostart: true
-  }).appendTo(document.body);
+//   var two = new Two({
+//     fullscreen: false,
+//     autostart: true
+//   }).appendTo(document.body);
 
-  let rect = [];
+//   let rect = [];
   
 
 
-  // Update the renderer in order to generate corresponding DOM Elements.
-  two.update();
+//   // Update the renderer in order to generate corresponding DOM Elements.
+//   two.update();
   
-});
+// });
 

@@ -1,93 +1,89 @@
-#right{
+#right {
     width: 70%;
-    float:left;
+    float: left;
     /* padding-left: 1%; */
-    border:solid 1px #000;
+    border: solid 1px #000;
 }
-#analyzer{
+
+#analyzer {
     height: 20vh;
     width: 30%;
-    border:solid 1px rgb(214, 3, 3);
+    border: solid 1px rgb(214, 3, 3);
     float: left;
 }
-#record{
+
+#record {
     float: left;
-    border:solid 1px #000;
+    border: solid 1px #000;
 }
-#timer{
+
+#timer {
     float: left;
     font-size: 120%;
     width: 30%;
-    border:solid 1px #000;
+    border: solid 1px #000;
 }
-#button{
+
+#button {
     width: 40%;
     float: left;
     height: 20vh;
-    border:solid 1px rgb(31, 116, 76);
+    border: solid 1px rgb(31, 116, 76);
 }
+
 #stepSeq {
     width: 100%;
-    height: 50%;
-    margin-bottom: 2%;
-    /* margin-top: 2%; */
+    height: 50vh;
+    /* margin-left: 3%;
+    margin-right: 3%; */
+    border: solid 1px rgb(255, 30, 255);
 }
-#rangeSlider{
-    height: 50%;
+
+#rangeSlider {
+    height: 50vh;
     width: 30%;
     float: left;
     /* display: inline-block; */
-    border:solid 1px #000;
+    border: solid 1px #000;
     font-size: 50%;
-    line-height: 120%;
+    /* line-height: 120%; */
 
 }
-#range1{
+
+.range {
     float: left;
     text-align: center;
     width: 25%;
-    border:solid 1px #000;
-}
-#range2{
-    float: left;
-    text-align: center;
-    width: 25%;
-    border:solid 1px #000;
-}
-#range3{
-    float: left;
-    text-align: center;
-    width: 25%;
-    border:solid 1px #000;
-}
-#range4{
-    float: left;
-    text-align: center;
-    width: 25%;
-    border:solid 1px #000;
+    height: 100%;
+    border: solid 1px #000;
 }
 
-.input-group{
+
+.input-group {
     width: 70%;
-    border:solid 1px #000;
+    border: solid 1px #000;
 }
-#choosefile{
-    width:10%;
-    border:solid 1px rgb(70, 5, 221);
+
+#choosefile {
+    width: 10%;
+    border: solid 1px rgb(70, 5, 221);
 }
-#list{
+
+#list {
     /* width: 20%;
     height: 10vh; */
-    border:solid 1px rgb(221, 5, 5);
+    border: solid 1px rgb(221, 5, 5);
 }
-#play{
-    border:solid 1px #000;
+
+#play {
+    border: solid 1px #000;
     float: left;
     width: 70%;
     height: 10%;
 }
-.custom-file{
-    border:solid 1px rgb(221, 5, 5);
+
+.custom-file {
+    border: solid 1px rgb(221, 5, 5);
 }
 
 /* .dropzone{
@@ -107,26 +103,29 @@
     color: #bbb;
     width: 20%;
     height: 20%;
-  }
+}
 
-  /* input[type=file]{
+/* input[type=file]{
     border:solid 1px rgb(221, 5, 5);
     width: 500px;
     height: 100px;
   } */
 
-  label > input {
-    display:none; /* アップロードボタンのスタイルを無効にする */
-    }
-    label {
-    color: rgb(0, 0, 0); /* ラベルテキストの色を指定する */
+label>input {
+    display: none;
+    /* アップロードボタンのスタイルを無効にする */
+}
+
+label {
+    color: rgb(0, 0, 0);
+    /* ラベルテキストの色を指定する */
     font-size: 100%;
-    background-color: rgb(250, 126, 126);/* ラベルの背景色を指定する */
+    background-color: rgb(250, 126, 126);
+    /* ラベルの背景色を指定する */
     /* padding: 2%; ラベルとテキスト間の余白を指定する */
     border: double 1vh #AAAAAA;
     float: left;
     width: 35%;
-    height: 10%;/* ラベルのボーダーを指定する */
-    }
-
-  
+    height: 10%;
+    /* ラベルのボーダーを指定する */
+}
