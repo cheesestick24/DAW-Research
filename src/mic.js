@@ -24,10 +24,10 @@ $(function () {
     onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
-        .html("ボリューム:" + '<br>'+ (Number(this.$element.val()) + 100.0));
+        .html("ボリューム:" + '<br>' + (Number(this.$element.val()) + 100.0));
     },
     onSlide: function (position, value) {
-      this.output.html("ボリューム:" + '<br>'+  (value + 100).toFixed(1));
+      this.output.html("ボリューム:" + '<br>' + (value + 100).toFixed(1));
       setVol(value);
       // console.log(value);
       function setVol(val) {
@@ -45,10 +45,10 @@ $(function () {
     onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
-        .html("リバーブ：" + '<br>'+ this.$element.val());
+        .html("リバーブ：" + '<br>' + this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html("リバーブ：" + '<br>'+ value);
+      this.output.html("リバーブ：" + '<br>' + value);
 
       setDelay(value);
 
@@ -67,10 +67,10 @@ $(function () {
     onInit: function () {
       this.output = $('<div class="range-output" />')
         .insertAfter(this.$range)
-        .html("ディレイ：" + '<br>'+ this.$element.val());
+        .html("ディレイ：" + '<br>' + this.$element.val());
     },
     onSlide: function (position, value) {
-      this.output.html("ディレイ：" + '<br>'+ value);
+      this.output.html("ディレイ：" + '<br>' + value);
 
       setReverb(value);
 
@@ -90,13 +90,13 @@ const micPlay = () => {
   if (state.recording === false) {
     if (state.playing === false) {
       // console.log('playing')
-      $("#play").text("再生中")
+      // $("#play").text("再生中")
       state.playing = true;
       for (let p of recordArray) {
         p.start();
       }
     } else {
-      $("#play").text("再生停止")
+      // $("#play").text("再生停止")
       // console.log('stop')
       state.playing = false;
       for (let p of recordArray) {
@@ -108,12 +108,14 @@ const micPlay = () => {
 
 const recClick = () => {
   if (state.recording === false) {
-    $("#record").text("録音中")
+    // $("#record").text("録音中")
+    $("#rec-status").text("■")
     recorder.recstart();
     state.recording = true;
     timer.timerStart();
   } else {
-    $("#record").text("録音停止")
+    // $("#record").text("録音停止")
+    $("#rec-status").text("●")
     recorder.recstop();
     state.recording = false;
     timer.timerStop();

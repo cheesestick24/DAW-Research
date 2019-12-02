@@ -1397,14 +1397,14 @@ function g(t){return"slot"===t.localName}class y{static getFlattenedNodes(t){ret
 					height: 40vh;
 					text-align: center;
 					
-					border:solid 1px #000;
+					border:solid 1px #8c8e8f;
 					display: block;
 				}
 				#container {
 					width: 100%;
 					height: 100%;
 					display: flex;
-					border: solid 1px rgb(31, 116, 76);
+					// border: solid 1px rgb(31, 116, 76);
 					// margin-left: 10%;
 					// margin-right: 10%;
 					// margin: 0 auto;

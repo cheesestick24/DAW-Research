@@ -45,35 +45,42 @@
     </div>
   </div>
   <div id="right">
-    <canvas id="analyzer"></canvas>
-    <div id="button">
-      録音ボタン
-      <button type="button" class="btn btn-danger rounded-circle p-0" style="width:60%;height:100%;font-size:250%;"
-        onclick="recClick()">●</button>
+    <div id="analyzer-file">
+      <canvas id="analyzer"></canvas>
+
+      <div id="block2">
+        <div id="rec-side">
+          <div id="button">
+            <button id="rec-status" type="button" class="btn btn-danger rounded-circle p-0"
+              style="width:100%;height:100%;font-size:24px;color:#fff;" onclick="recClick()">●</button>
+          </div>
+          <!-- <div id="record">録音停止</div> -->
+          <div id="timer">録音時間：0分0秒000</div>
+        </div>
+
+        <div id="file-side">
+          <label for="files">
+            ファイル選択
+            <input type="file" class="file-upload" aria-describedby="inputGroupFileAddon01" id="files" name="files[]"
+              accept="audio/*" multiple>
+          </label>
+          <div id="drop_zone">Drop files here</div>
+        </div>
+      </div>
+
+      <div id="block3">
+          <output id="list"></output>
+      </div>
+
     </div>
-    <div id="record">録音停止</div>
-    <div id="timer">録音時間：0分0秒000</div>
-  </div>
+
+    <!-- <form action="/upload" class="dropzone"></form> -->
 
 
-  <!-- <form action="/upload" class="dropzone"></form> -->
-  <div id="drop_zone">Drop files here</div>
-
-
-
-
-  <label for="files">
-    ファイルを選択してください
-    <input type="file" class="file-upload" aria-describedby="inputGroupFileAddon01" id="files" name="files[]"
-      accept="audio/*" multiple>
-  </label>
-
-  <div>
-    <output id="list"></output>
-  </div>
-  <!-- </div> -->
-  <div id="play">
-    <tone-transport></tone-transport>
+    <!-- </div> -->
+    <div id="play">
+      <tone-transport></tone-transport>
+    </div>
   </div>
 
 

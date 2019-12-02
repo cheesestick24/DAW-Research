@@ -1,55 +1,97 @@
+html {
+    height: 100%;
+}
+
 #right {
-    width: 70%;
+    width: 70vw;
     float: left;
-    height: 20%;
+    height: 50vh;
     /* padding-left: 1%; */
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
+}
+
+#analyzer-file {
+    height: 26vh;
 }
 
 #analyzer {
-    height: 20vh;
+    height: 100%;
     width: 30%;
     border: solid 1px rgb(214, 3, 3);
     float: left;
 }
 
+#block2 {
+    height: 100%;
+    float: left;
+}
+
+#block3 {
+    float: left;
+    height: 100%;
+    overflow: scroll;
+    border: solid 0.5px #AAAAAA;
+}
+
+#rec-side {
+    height: 10vh;
+}
+
+.thumb {
+    width: 15vw;
+}
+/* 
+#file-side {
+    
+} */
+
+/* trans-port {
+    width: 100%;
+} */
+
 #record {
     float: left;
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
 }
 
 #timer {
     float: left;
     font-size: 120%;
-    width: 30%;
-    border: solid 1px #000;
+    /* width: 30%; */
+    /* border: solid 1px #000; */
 }
 
 #button {
-    width: 40%;
     float: left;
-    height: 20vh;
-    border: solid 1px rgb(31, 116, 76);
+    width: 50px;
+    height: 50px;
+    /* border: solid 1px rgb(31, 116, 76); */
+    font-size: 1vh;
 }
 
 #stepSeq {
     width: 100%;
-    height: 50%;
-    
+    height: 50vh;
+
     /* position: absolute; */
-    margin: 2% 5%;
+    margin: auto;
     /* height: 50vh; */
     /* margin-left: 3%;
     margin-right: 3%; */
-    border: solid 1px rgb(255, 30, 255);
+    /* border: solid 1px rgb(255, 30, 255); */
+}
+
+tone-step-sequencer {
+    margin: auto;
+    height: 100%;
 }
 
 #rangeSlider {
     height: 50vh;
-    width: 30%;
+    width: 30vw;
     float: left;
     /* display: inline-block; */
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
     font-size: 50%;
     /* line-height: 120%; */
 
@@ -60,36 +102,32 @@
     text-align: center;
     width: 25%;
     height: 100%;
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
 }
 
 
 .input-group {
     width: 70%;
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
 }
 
 #choosefile {
     width: 10%;
-    border: solid 1px rgb(70, 5, 221);
+    /* border: solid 1px rgb(70, 5, 221); */
 }
 
-#list {
-    /* width: 20%;
-    height: 10vh; */
-    border: solid 1px rgb(221, 5, 5);
-}
+
 
 #play {
-    border: solid 1px #000;
-    float: left;
-    width: 70%;
-    height: 10%;
+    /* border: solid 1px #000; */
+    /* float: left; */
+    /* width: 100%; */
+    /* height: 100%; */
+    clear: both;
+    width: 70vw;
+    /* height: 10%; */
 }
 
-.custom-file {
-    border: solid 1px rgb(221, 5, 5);
-}
 
 
 
@@ -101,10 +139,10 @@
     /* padding: 25px; */
     text-align: center;
     float: left;
-  
+
     color: #bbb;
-    width: 20%;
-    height: 30%;
+    width: 50%;
+    height: 10vh;
 }
 
 
@@ -117,13 +155,21 @@ label {
     color: rgb(0, 0, 0);
     /* ラベルテキストの色を指定する */
     font-size: 100%;
-    background-color: rgb(250, 126, 126);
+    background-color: rgb(250, 223, 223);
     /* ラベルの背景色を指定する */
     /* padding: 2%; ラベルとテキスト間の余白を指定する */
     border: double 1vh #AAAAAA;
     float: left;
-    width: 35%;
-    height: 10%;
+    width: 50%;
+    margin-bottom: 0px;
+    height: 10vh;
+    vertical-align: middle;
+    line-height: 100%;
+    /* display: inline-block; */
     /* ラベルのボーダーを指定する */
 }
 
+/* 全 div にボーダーをあてるやつ */
+div {
+    /* border: solid 0.05px #AAAAAA; */
+}
