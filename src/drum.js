@@ -30,11 +30,11 @@ $('input[type="range_4"]').rangeslider({
     onInit: function () {
         this.output = $('<div class="range-output" />')
             .insertAfter(this.$range)
-            .html("ボリューム:" + '<br>'+ (Number(this.$element.val()) + 100));
+            .html("ボリューム" + '<br>'+ (Number(this.$element.val()) + 100));
         synthVol = this.$element.val();
     },
     onSlide: function (position, value) {
-        this.output.html("ボリューム:" + '<br>'+ (value + 100).toFixed(1));
+        this.output.html("ボリューム" + '<br>'+ (value + 100).toFixed(1));
         synthVol = value;
         // setVol(value);
         // function setVol(val) {
