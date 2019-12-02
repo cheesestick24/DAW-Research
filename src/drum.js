@@ -7,20 +7,20 @@ let instrument = [
     "./audio/drum/Snare07.mp3",
     "./audio/drum/CHH Edge06.mp3",
     "./audio/drum/OHH Edge06.mp3",
-    "./audio/drum/Kick10.mp3",
-    "./audio/drum/Snare07.mp3",
-    "./audio/drum/CHH Edge06.mp3",
-    "./audio/drum/OHH Edge06.mp3",
-    "./audio/drum/Kick10.mp3",
-    "./audio/drum/Snare07.mp3",
-    "./audio/drum/CHH Edge06.mp3",
-    "./audio/drum/OHH Edge06.mp3",
-    "./audio/drum/Kick10.mp3",
-    "./audio/drum/Snare07.mp3",
-    "./audio/drum/CHH Edge06.mp3",
-    "./audio/drum/OHH Edge06.mp3",
-    // "/src/audio/drum/Crash Cymbal-L05.mp3",
-    // "/src/audio/drum/Crash Cymbal-R06.mp3"
+    // "./audio/drum/Kick10.mp3",
+    // "./audio/drum/Snare07.mp3",
+    // "./audio/drum/CHH Edge06.mp3",
+    // "./audio/drum/OHH Edge06.mp3",
+    // "./audio/drum/Kick10.mp3",
+    // "./audio/drum/Snare07.mp3",
+    // "./audio/drum/CHH Edge06.mp3",
+    // "./audio/drum/OHH Edge06.mp3",
+    // "./audio/drum/Kick10.mp3",
+    // "./audio/drum/Snare07.mp3",
+    // "./audio/drum/CHH Edge06.mp3",
+    // "./audio/drum/OHH Edge06.mp3",
+    "/src/audio/drum/Crash Cymbal-L05.mp3",
+    "/src/audio/drum/Crash Cymbal-R06.mp3"
 ]
 
 let synthVol = 10;
@@ -52,7 +52,7 @@ function loadPlayers(index, vol, time) {
     drum.autostart = true;
 
 }
-const length = 16;
+const length = 6;
 
 firstFlag = true;
 var loop = new Tone.Sequence(function (time, col) {
