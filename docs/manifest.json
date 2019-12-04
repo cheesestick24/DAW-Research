@@ -2,10 +2,11 @@
   "name": "音楽作成アプリ",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "Scope": "/DAW-Research",
   "start_url": "/DAW-Research",
-  "orientation": "", 
+  "orientation": "landscape",
+
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
