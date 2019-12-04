@@ -15,6 +15,7 @@ self.addEventListener('fetch', function(event) {
               return caches.open(CACHE_DYNAMIC_VERSION)
                 .then(function(cache) {
                   // 最後に res を返せるように、ここでは clone() する必要がある
+                  console.log("sasda");
                   cache.put(event.request.url, res.clone());
                   return res;
                 })
