@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode development",
     "start": "webpack-dev-server",
+    "dev": "webpack && webpack-dev-server --mode development --host 192.168.163.8",
     "watch": "webpack --watch"
   },
   "keywords": [],
