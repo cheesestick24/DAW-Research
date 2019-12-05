@@ -35,7 +35,11 @@ html {
 }
 
 #rec-side {
-    height: 10vh;
+    height: 50%;
+}
+
+#file-side {
+    height: 50%;
 }
 
 .thumb {
@@ -143,7 +147,7 @@ tone-step-sequencer {
 
     color: #bbb;
     width: 49%;
-    height: 10vh;
+    height: 100%;
 }
 
 
@@ -163,7 +167,7 @@ label {
     float: left;
     width: 50%;
     margin-bottom: 0px;
-    height: 10vh;
+    height: 100%;
     vertical-align: middle;
     /* line-height: 100%; */
     /* display: inline-block; */
@@ -180,9 +184,7 @@ label {
 }
 
 /* 全 div にボーダーをあてるやつ */
-div {
-    /* border: solid 0.05px #AAAAAA; */
-}
+
 
 .vol{
     margin-top: 10%;
