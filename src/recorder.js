@@ -12,11 +12,11 @@ window.onload = function () {
     video: false
   }, successFunc, errorFunc);
 
-  function successFunc (error) {
+  function successFunc(error) {
     console.log('マイク使えます')
   }
   // Web Audio APIが使えなかった時
-  function errorFunc (error) {
+  function errorFunc(error) {
     alert('error');
   }
 }
@@ -29,7 +29,7 @@ let mediaRecorder = null;
 let mediaStream = null;
 
 
-export function recstart () {
+export function recstart() {
 
 
 
@@ -48,7 +48,10 @@ export function recstart () {
     const recData = URL.createObjectURL(new Blob(chunks));
     //tumami izirumade otonaranai
     // recordArray.push(new Tone.Player(recData));
-    recordArray.push(new Tone.Player(recData).toMaster());
+    recordArray.push(new Tone.Player({
+      "url": recData,
+      "volume": -100
+    }).toMaster());
 
     // console.log(URL.createObjectURL(new Blob(chunks)));
     // console.log(new Blob(chunks));
@@ -60,7 +63,7 @@ export function recstart () {
 
 };
 
-export function recstop () {
+export function recstop() {
   if (mediaRecorder === null) {
     return;
   }

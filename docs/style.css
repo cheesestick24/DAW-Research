@@ -183,3 +183,10 @@ label {
 div {
     /* border: solid 0.05px #AAAAAA; */
 }
+
+.vol{
+    margin-top: 10%;
+    writing-mode: vertical-rl;
+    /* text-orientation: upright;  */
+    float: left;
+}

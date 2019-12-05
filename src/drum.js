@@ -18,12 +18,13 @@ $('input[type="range_4"]').rangeslider({
     onInit: function () {
         this.output = $('<div class="range-output" />')
             .insertAfter(this.$range)
-            .html("ボリューム" + '<br>'+ (Number(this.$element.val()) + 100));
+            .html((Number(this.$element.val()) + 100));
         synthVol = this.$element.val();
     },
     onSlide: function (position, value) {
-        this.output.html("ボリューム" + '<br>'+ (value + 100).toFixed(1));
+        this.output.html((value + 100).toFixed(1));
         synthVol = value;
+        console.log(value);
         // setVol(value);
         // function setVol(val) {
         //     synth.volume.value = val;
@@ -33,10 +34,11 @@ $('input[type="range_4"]').rangeslider({
 
 
 function loadPlayers(index, vol, time) {
-    // console.log(instrument[index]);
-    const drum = new Tone.Player(instrument[index]).toMaster({
-        volume: vol
-    });
+    console.log(instrument[index]);
+    const drum = new Tone.Player({
+        "url": instrument[index],
+        "volume": vol
+    }).toMaster();
     drum.autostart = true;
 
 }
