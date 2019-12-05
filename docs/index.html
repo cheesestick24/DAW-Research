@@ -24,17 +24,30 @@
 </head>
 
 <body>
+
+
+
   <div id="stepSeq">
-    <table id="number"  >
+    <table id="number">
       <tr>
-        <th id="num-a" width="10%">楽器名＼小節</th>
+        <th id="num-a" width="10%">
+          <div class="hidden_box">
+            <label for="label1">使い方</label>
+            <input type="checkbox" id="label1" />
+            <div class="hidden_show">
+              <!--非表示ここから-->
+                使い方とかもりもり
+              <!--ここまで-->
+            </div>
+          </div>
+        </th>
         <td class="num-th">1</td>
         <td class="num-th">2</td>
         <td class="num-th">3</td>
         <td class="num-th">4</td>
       </tr>
     </table>
-      <!-- 1234 -->
+    <!-- 1234 -->
     <table id="instruments">
       <tr>
         <td class="instruments-name">キック</td>
@@ -55,27 +68,27 @@
         <td class="instruments-name">スティク</td>
       </tr>
     </table>
-   
-    <tone-step-sequencer ></tone-step-sequencer>
+
+    <tone-step-sequencer></tone-step-sequencer>
   </div>
   <div id="rangeSlider">
     <div class="range">
-        <div class="vol">マイクボリューム</div>
+      <div class="vol">マイクボリューム</div>
       <input type="range_1" min="-100" max="0" step="0.1" value="-100.0" data-rangeslider data-orientation="vertical"
         style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
     </div>
     <div class="range">
-        <div class="vol">マイクディレイ</div>
+      <div class="vol">マイクディレイ</div>
       <input type="range_2" min="0" max="1" step="0.001" value="0" data-rangeslider data-orientation="vertical"
         style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
     </div>
     <div class="range">
-        <div class="vol">マイクリバーブ</div>
+      <div class="vol">マイクリバーブ</div>
       <input type="range_3" min="0" max="1" step="0.001" value="0" data-rangeslider data-orientation="vertical"
         style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
     </div>
     <div class="range">
-        <div class="vol">ドラムパターンボリューム</div>
+      <div class="vol">ドラムパターンボリューム</div>
       <input type="range_4" min="-100" max="0" step="0.1" value="-100.0" data-rangeslider data-orientation="vertical"
         style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
     </div>
@@ -95,7 +108,7 @@
         </div>
 
         <div id="file-side">
-          <label for="files">
+          <label id="file-select" for="files">
             ファイル選択
             <input type="file" class="file-upload" aria-describedby="inputGroupFileAddon01" id="files" name="files[]"
               accept="audio/*" multiple>
@@ -105,7 +118,7 @@
       </div>
 
       <div id="block3">
-          <output id="list"></output>
+        <output id="list"></output>
       </div>
 
     </div>
