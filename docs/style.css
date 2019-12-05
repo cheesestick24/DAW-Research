@@ -37,6 +37,7 @@ body {
 #block3 {
     float: left;
     height: 100%;
+    width:21.5vw;
     overflow: scroll;
     border: solid 0.5px #AAAAAA;
 }
@@ -50,9 +51,14 @@ body {
 }
 
 .thumb {
-    width: 15vw;
+    margin-top:1%;
+    width: 18vw;
+    height: 5vh;
+    float: left;
 }
-
+#list{
+    float: left;
+}
 /* 
 #file-side {
     
