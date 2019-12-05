@@ -3,7 +3,9 @@ html {
     overflow: visible;
 }
 
-
+body{
+    margin:0.5%;
+}
 
 
 #right {
