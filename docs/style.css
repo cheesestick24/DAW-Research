@@ -47,7 +47,7 @@ body {
 }
 #button {
     float: left;
-    width: auto;
+    width: 30%;
     height: 80%;
     /* border: solid 1px rgb(31, 116, 76); */
     font-size: 1vh;
@@ -87,7 +87,7 @@ body {
 
 #timer {
     float: left;
-    /* font-size: 1.2vw; */
+    font-size: 1.7vw;
     margin-top: 2%;
     width: auto;
     /* width: 30%; */
