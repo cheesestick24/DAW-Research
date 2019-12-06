@@ -9,7 +9,7 @@ body {
 
 
 #right {
-    width: 69vw;
+    width: 70%;
     float: left;
     height: 50vh;
     /* padding-left: 1%; */
@@ -30,14 +30,14 @@ body {
 #block2 {
     height: 100%;
     float: left;
-    width: auto;
+    width: 40%;
     /* padding-top:0.1%; */
 }
 
 #block3 {
     float: left;
     height: 100%;
-    width: 21.5vw;
+    width: 30%;
     overflow: scroll;
     border: solid 0.5px #AAAAAA;
 }
@@ -45,6 +45,16 @@ body {
 #rec-side {
     height: 50%;
 }
+#button {
+    float: left;
+    width: auto;
+    height: 80%;
+    /* border: solid 1px rgb(31, 116, 76); */
+    font-size: 1vh;
+    margin:2%;
+}
+
+
 
 #file-side {
     height: 50%;
@@ -77,19 +87,14 @@ body {
 
 #timer {
     float: left;
-    font-size: 120%;
+    /* font-size: 1.2vw; */
     margin-top: 2%;
+    width: auto;
     /* width: 30%; */
     /* border: solid 1px #000; */
 }
 
-#button {
-    float: left;
-    width: 45px;
-    height: 45px;
-    /* border: solid 1px rgb(31, 116, 76); */
-    font-size: 1vh;
-}
+
 
 #stepSeq {
     width: 100%;
@@ -111,7 +116,7 @@ tone-step-sequencer {
 
 #rangeSlider {
     height: 50vh;
-    width: 28.5vw;
+    width: 30%;
     float: left;
     /* display: inline-block; */
     /* border: solid 1px #000; */
@@ -147,7 +152,7 @@ tone-step-sequencer {
     /* width: 100%; */
     /* height: 100%; */
     clear: both;
-    width: 69vw;
+    width: 100%;
     /* height: 10%; */
 }
 
