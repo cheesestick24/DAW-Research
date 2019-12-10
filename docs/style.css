@@ -114,6 +114,8 @@ tone-step-sequencer {
     /* margin-top: 2%; */
 }
 
+
+
 #rangeSlider {
     height: 50vh;
     width: 30%;
@@ -130,6 +132,7 @@ tone-step-sequencer {
     text-align: center;
     width: 25%;
     height: 100%;
+    padding-top: 2%;
     /* border: solid 1px #000; */
 }
 
